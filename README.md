@@ -1,25 +1,25 @@
 # 32-BIT_ALU Simulation and Synthesis
-# Aim:
+## Aim:
 Write a Verilog code for a 32-bit ALU supporting four logical and four arithmetic operations. Use case statements in behavioural modelling.
 To verify functionality using the Test Bench, synthesize and analyse area and Power reports of a 32 Bit ALU design 
-# Tool Required:
+## Tool Required:
 Functional Simulation: Incisive Simulator (ncvlog, nclaunch, ncsim)
 Synthesise using Genus
-# Design Information and Block Diagram:
+## Design Information and Block Diagram:
 The ALU will take in two 32-bit values and a control line. An Arithmetic unit does the following tasks like addition, subtraction, multiplication and logical operations. As the input is given in 32-bit, we get a 32-bit output. The arithmetic will show only one output at a time, so a selector is necessary to select one of the operators.
  
-                                             Fig 1: Block Diagram of 32 Bit ALU
+                                             ### Fig 1: Block Diagram of 32 Bit ALU
 Creating a Workspace:
 Create a folder in your name (Note: Give folder name without any space) and create a new sub-Directory name it as Exp3 or alu_32bit for the Design and open a terminal from the Sub-Directory.
-Creating Source Codes
+## Creating Source Codes
 In the Terminal window, type gedit <filename>.v (ex: gedit alu_32bit.v).
 A Blank Document opens up into which the following source code can be typed.
 (Note: File name should be with HDL Extension)
-a)	To verify the Functionality using the Test Bench
-Source Code – Using Case Statement :
+#### a)	To verify the Functionality using the Test Bench
+## Source Code – Using Case Statement :
 (Include program here)
 Use the Save option or Ctrl+S to save the code, or click on the save option from the top-right corner and close the text file.
-Creating a Test Bench:
+## Creating a Test Bench:
 Similarly, create your test bench using gedit <filename_tb>.v to open a new blank document (alu_32bit_tb_case).
 Test Bench :
 (Include test bench program here)
