@@ -31,7 +31,25 @@ A Blank Document opens up into which the following source code can be typed.
 
 ## Source Code – Using Case Statement :
 
-(Include program here)
+module alu_32bit_case(y,a,b,f);
+input [31:0]a;
+input [31:0]b;
+input [2:0]f;
+output reg [31:0]y;
+always@(*)
+begin
+case(f)
+3'b000:y=a&b; //AND Operation
+3'b001:y=a|b; //OR Operation
+3'b010:y=~(a&b); //NAND Operation
+3'b011:y=~(a|b); //NOR Operation
+3'b100:y=a^b; //XOR Operation
+3'b101:y=~(a^b); //XNOR Operation
+3'b110:y=~a; //NOT of a
+3'b111:y=~b; //NOT of b
+endcase
+end
+endmodule
 
 Use the Save option or Ctrl+S to save the code, or click on the save option from the top-right corner and close the text file.
 
@@ -41,7 +59,47 @@ Similarly, create your test bench using gedit <filename_tb>.v to open a new blan
 
 ## Test Bench :
 
-(Include test bench program here)
+*module alu_32bit_tb_case;
+
+reg [31:0]a;
+
+reg [31:0]b;
+
+reg [2:0]f;
+
+wire [31:0]y;
+
+alu_32bit_case dut(.y(y),.a(a),.b(b),.f(f));
+
+initial
+
+begin
+
+a=32'h00000000;
+
+b=32'h10101010;
+
+#10 f=3'b000;
+
+#10 f=3'b001;
+
+#10 f=3'b010;
+
+#10 f=3'b011;
+
+#10 f=3'b100;
+
+#10 f=3'b101;
+
+#10 f=3'b110;
+
+#10 f=3'b111;
+
+#100 $finish;
+
+end
+
+endmodule*
 
 Use the Save option or Ctrl+S to save the code, or click on the save option from the top-right corner and close the text file.
 
@@ -57,6 +115,9 @@ source /cadence/install/cshrc (mention the path of the tools)
 
 After this, you can see the window like below
 
+<img width="1844" height="617" alt="image" src="https://github.com/user-attachments/assets/d3a8dc69-3f83-4cd4-81c5-9d431693cdab" />
+
+
 #### Fig 2: Invoke the Cadence Environment
 
 To Launch the Simulation tool
@@ -69,11 +130,15 @@ or
 
 It will invoke the nclaunch window for functional simulation. We can compile, elaborate and simulate it using Multiple Steps.
 
+<img width="303" height="325" alt="image" src="https://github.com/user-attachments/assets/96d3d804-a0d4-4a60-b625-5f94d4d0e1d7" />
+
+
 #### Fig 3: Setting Multi-step simulation
 
 Select Multiple Step and then select “Create cds.lib File” as shown in the figure below
 
 Click the .cds.lib file and save the file by clicking on the Save option
+
 
 #### Fig 4:cds.lib file Creation
 Save .lib file and select the correct option for cds.lib file format based on the HDL Language and Libraries used.
@@ -83,7 +148,10 @@ Select “Don’t include any libraries (verilog design)” from “New cds.lib 
 We are simulating a verilog design without using any libraries
 
 Click “OK” in the “nclaunch: Open Design Directory” window, as shown in the figure below
- 
+
+<img width="209" height="289" alt="image" src="https://github.com/user-attachments/assets/59466610-8dfe-4b63-a347-d1a52b64aca5" />
+
+
 #### Fig 5: Selection of Don’t include any libraries
 An ‘NCLaunch window’ appears as shown in the figure below
 
@@ -92,6 +160,8 @@ Left side, you can see the HDL files. The right side of the window has Worklib a
 Worklib is the directory where all the compiled codes are stored, while Snapshot will have the output of elaboration, which in turn goes for simulation.
 
 To perform the function simulation, the following three steps are involved: Compilation, Elaboration and Simulation.
+
+<img width="724" height="376" alt="image" src="https://github.com/user-attachments/assets/dcbe372c-f806-4b2c-9455-e77dbdb32854" />
 
 #### Fig 6: Nclaunch Window
 
@@ -113,6 +183,9 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile filename.v
 
 Left side select the file and in Tools: launch verilog compiler with current selection will get enable. Click it to compile the code
 Worklib is the directory where all the compiled codes are stored while Snapshot will have output of elaboration which in turn goes for simulation
+
+<img width="717" height="221" alt="image" src="https://github.com/user-attachments/assets/e697c381-4217-4342-9bf1-893fb7e7fddf" />
+
 
 #### Fig 7: Compiled database in WorkLib
 After compilation, it will come under worklib. You can see on the right side window
@@ -143,6 +216,9 @@ Outputs: Elaborate database updated in the mapped library if successful, generat
 
 After elaboration, the file will come under snapshot. Select the test bench and simulate it.
 
+<img width="724" height="333" alt="image" src="https://github.com/user-attachments/assets/55f88627-0107-4cdc-9adc-140e6ed90ed5" />
+
+
 #### Fig 8: Elaboration Launch Option
 
 ### Step 3: Simulation:
@@ -156,7 +232,13 @@ Simulations allow dumping design and test bench signals into a waveform
 
 Steps for simulation – Run the simulation command with simulator options
 
+<img width="730" height="336" alt="image" src="https://github.com/user-attachments/assets/643f8369-af84-4af0-b7b5-8c520ccacade" />
+
+
 #### Fig 9: Design Browser window for simulation
+
+<img width="685" height="402" alt="image" src="https://github.com/user-attachments/assets/1eb3fce1-b87e-4a65-8ce3-f53a35620bc1" />
+
 
 #### Fig 10: Simulation Waveform Window
 
@@ -175,9 +257,17 @@ The Liberty files are present in the library path,
 
 • Genus Script file with .tcl file Extension commands are executed one by one to synthesize the netlist. Or use source run.tcl command in the terminal window to view the netlist, and a log file will be created in the working folder.
 
+<img width="720" height="317" alt="image" src="https://github.com/user-attachments/assets/f2ede04c-375c-4554-9509-c31057b89470" />
+
 #### Fig 11: Synthesis RTL Schematic 
 
+<img width="623" height="402" alt="image" src="https://github.com/user-attachments/assets/3b579bfc-6222-416c-bd12-0964ea4ae060" />
+
+
 #### Fig 12: Area report
+
+<img width="724" height="106" alt="image" src="https://github.com/user-attachments/assets/622d31e6-d492-42ef-b63d-306f8a6709e6" />
+
 
 #### Fig 13: Power Report
 
