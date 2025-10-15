@@ -249,6 +249,7 @@ Synthesis requires three files as follows,
 ◦ Verilog/VHDL Files (.v or .vhdl or .vhd)
 
 ### Performing Synthesis
+
 The Liberty files are present in the library path,
 
 • The Available technology nodes are 180nm,90nm and 45nm.
