@@ -115,7 +115,8 @@ source /cadence/install/cshrc (mention the path of the tools)
 
 After this, you can see the window like below
 
-<img width="1844" height="617" alt="image" src="https://github.com/user-attachments/assets/d3a8dc69-3f83-4cd4-81c5-9d431693cdab" />
+![WhatsApp Image 2025-10-15 at 10 53 34_3748b886](https://github.com/user-attachments/assets/873d0e53-fcc8-4439-8813-621ff75a352f)
+
 
 
 #### Fig 2: Invoke the Cadence Environment
@@ -130,7 +131,7 @@ or
 
 It will invoke the nclaunch window for functional simulation. We can compile, elaborate and simulate it using Multiple Steps.
 
-<img width="303" height="325" alt="image" src="https://github.com/user-attachments/assets/96d3d804-a0d4-4a60-b625-5f94d4d0e1d7" />
+![WhatsApp Image 2025-10-15 at 10 54 12_08801415](https://github.com/user-attachments/assets/73fb5345-32ef-46a3-af62-1d69c85c58a3)
 
 
 #### Fig 3: Setting Multi-step simulation
@@ -138,6 +139,7 @@ It will invoke the nclaunch window for functional simulation. We can compile, el
 Select Multiple Step and then select “Create cds.lib File” as shown in the figure below
 
 Click the .cds.lib file and save the file by clicking on the Save option
+![WhatsApp Image 2025-10-15 at 10 54 57_9bc21a90](https://github.com/user-attachments/assets/6960ace3-26fd-4902-943c-48443261862c)
 
 
 #### Fig 4:cds.lib file Creation
@@ -149,9 +151,6 @@ We are simulating a verilog design without using any libraries
 
 Click “OK” in the “nclaunch: Open Design Directory” window, as shown in the figure below
 
-<img width="209" height="289" alt="image" src="https://github.com/user-attachments/assets/59466610-8dfe-4b63-a347-d1a52b64aca5" />
-
-
 #### Fig 5: Selection of Don’t include any libraries
 An ‘NCLaunch window’ appears as shown in the figure below
 
@@ -160,8 +159,8 @@ Left side, you can see the HDL files. The right side of the window has Worklib a
 Worklib is the directory where all the compiled codes are stored, while Snapshot will have the output of elaboration, which in turn goes for simulation.
 
 To perform the function simulation, the following three steps are involved: Compilation, Elaboration and Simulation.
+![WhatsApp Image 2025-10-15 at 10 57 12_4fd0d469](https://github.com/user-attachments/assets/49fb3760-62d9-44b6-bb40-93d4e585458a)
 
-<img width="724" height="376" alt="image" src="https://github.com/user-attachments/assets/dcbe372c-f806-4b2c-9455-e77dbdb32854" />
 
 #### Fig 6: Nclaunch Window
 
@@ -184,8 +183,6 @@ i.e Cadence IES command for compile: ncverilog +access+rwc -compile filename.v
 Left side select the file and in Tools: launch verilog compiler with current selection will get enable. Click it to compile the code
 Worklib is the directory where all the compiled codes are stored while Snapshot will have output of elaboration which in turn goes for simulation
 
-<img width="717" height="221" alt="image" src="https://github.com/user-attachments/assets/e697c381-4217-4342-9bf1-893fb7e7fddf" />
-
 
 #### Fig 7: Compiled database in WorkLib
 After compilation, it will come under worklib. You can see on the right side window
@@ -193,6 +190,8 @@ After compilation, it will come under worklib. You can see on the right side win
 select the test bench and compile it. It will come under Worklib. Under Worklib, you can see the module and test bench.
 
 The cds.lib file is an ASCII text file. It defines which libraries are accessible and where they are located. It contains statements that map logical library names to their physical directory paths. For this Design, you will define a library called “worklib”
+![WhatsApp Image 2025-10-15 at 10 57 37_34db9e11](https://github.com/user-attachments/assets/a04a0198-ac35-447b-8d6b-617c921e71db)
+
 
 ### Step 2: Elaboration:
 To check the port connections in a hierarchical design
@@ -232,13 +231,12 @@ Simulations allow dumping design and test bench signals into a waveform
 
 Steps for simulation – Run the simulation command with simulator options
 
-<img width="730" height="336" alt="image" src="https://github.com/user-attachments/assets/643f8369-af84-4af0-b7b5-8c520ccacade" />
+![WhatsApp Image 2025-10-15 at 11 13 24_5e9dd2da](https://github.com/user-attachments/assets/6215821c-1ded-4fcd-a22f-2b705d15d4e5)
 
 
 #### Fig 9: Design Browser window for simulation
 
-<img width="685" height="402" alt="image" src="https://github.com/user-attachments/assets/1eb3fce1-b87e-4a65-8ce3-f53a35620bc1" />
-
+![WhatsApp Image 2025-10-15 at 11 14 06_e2f2c490](https://github.com/user-attachments/assets/24349c49-2941-4808-8e7a-0e0a03f1a20a)
 
 #### Fig 10: Simulation Waveform Window
 
@@ -266,10 +264,13 @@ The Liberty files are present in the library path,
 
 #### Fig 12: Area report
 
-<img width="724" height="106" alt="image" src="https://github.com/user-attachments/assets/622d31e6-d492-42ef-b63d-306f8a6709e6" />
+![WhatsApp Image 2025-10-15 at 10 58 58_85a82042](https://github.com/user-attachments/assets/4b61769b-44d1-4e64-aeca-0af80e29df30)
 
 
 #### Fig 13: Power Report
+
+![WhatsApp Image 2025-10-15 at 10 59 20_8859acb8](https://github.com/user-attachments/assets/7cf616e8-d978-49a6-b455-bf05c688d765)
+
 
 ## Result
 The functionality of the 32-bit ALU was successfully verified using a test bench and simulated with the nclaunch tool. Additionally, the generic netlist of the 32-bit ALU was generated, and the corresponding area and power reports were analyzed and tabulated using Cadence Genus.
